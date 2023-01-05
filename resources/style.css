@@ -5,3 +5,32 @@
 .header {
 	text-align: center;
 }
+
+.body {
+	display: flex;
+	width: 60%;
+	margin: auto;
+	border: 2px dotted grey ;
+}
+
+
+/* BUTTONS */
+.buttons {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid brown;
+	gap: 2rem;
+	max-width: 150px;
+}
+
+
+
+/* GRID */
+
+.gridcontainer {
+	border: 1px solid blue;
+}
+
+.gridbox {
+	display: grid;
+}

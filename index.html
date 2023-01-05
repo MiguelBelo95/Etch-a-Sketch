@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./resources/style.css">
-	<script src="./resources/logic.js" defer></script>
-	<title>Draw & Skecth</title>
-</head>
-<body>
-	<div class="header">
-		<h1>Etch a Skecth Drawing</h1>
-		<h4>Give it a try!</h4>
-	</div>
-	<div class="body">
-		<div class="buttons"></div>
-		<div class="gridbox"></div>
-	</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./resources/style.css" />
+    <script src="./resources/logic.js" defer></script>
+    <title>Draw & Skecth</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Etch a Skecth Drawing</h1>
+      <h4>Give it a try!</h4>
+    </div>
+    <div class="body">
+      <div class="buttons">
+        <input id="colorSelector" type="color" />
+        <button id="penBtn" class="active">Pen</button>
+        <button id="rainbowBtn">Rainbow mode</button>
+        <button id="darkBtn">Darker light</button>
+        <button id="brightBtn">Brighter light</button>
+        <button id="eraserBtn">Eraser</button>
+        <button id="clearBtn">Clear draw</button>
+		<div id="sizeValue" class="size-value"></div>
+        <input type="range" value="15" min="10" max="100" id="sizeSlider" />
+      </div>
+      <div class="gridcontainer">
+        <div class="gridbox"></div>
+      </div>
+    </div>
+  </body>
 </html>
