@@ -22,8 +22,16 @@
         <button id="brightBtn">Brighter light</button>
         <button id="eraserBtn">Eraser</button>
         <button id="clearBtn">Clear draw</button>
-		<div id="sizeValue" class="size-value"></div>
-        <input type="range" value="15" min="10" max="100" id="sizeSlider" />
+        <div id="sizeValue" class="size-value"></div>
+        <input
+          type="range"
+          id="grid-size"
+          min="10"
+          max="100"
+          value="15"
+          step="1"
+          oninput="changeValue()"
+        />
       </div>
       <div class="gridcontainer">
         <div class="gridbox"></div>

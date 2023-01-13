@@ -6,13 +6,18 @@ const brightBtn = document.getElementById('brightBtn');
 const eraserBtn = document.getElementById('eraserBtn');
 const clearBtn = document.getElementById('clearBtn');
 const sizeDisplay = document.getElementById('sizeValue');
-const sizeSlider = document.getElementById('sizeSlider');
+const sizeSlider = document.getElementById('grid-size');
 
+sizeDisplay.textContent = `${sizeSlider.value} X ${sizeSlider.value}`;
 
+//GRID SIZE
+sizeDisplay.textContent = `${sizeSlider.value} X ${sizeSlider.value}`;
 
-let sizeValue = sizeSlider.value;
-
-sizeDisplay.append(`${sizeValue} X ${sizeValue}`) 
+function changeValue() {
+	sizeDisplay.textContent = "" ;
+	let gridSize = sizeSlider.value;
+	sizeDisplay.append(`${gridSize} X ${gridSize}`);
+}
 
 //Toggle active and inactive on buttons, change background of btn
 
