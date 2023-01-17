@@ -22,20 +22,17 @@
         <button id="brightBtn">Brighter light</button>
         <button id="eraserBtn">Eraser</button>
         <button id="clearBtn">Clear draw</button>
-        <div id="sizeValue" class="size-value"></div>
+        <div id="sizeValue" class="size-value">15 x 15</div>
         <input
           type="range"
           id="grid-size"
           min="10"
-          max="100"
+          max="50"
           value="15"
           step="1"
-          oninput="changeValue()"
         />
       </div>
-      <div class="gridcontainer">
-        <div class="gridbox"></div>
-      </div>
+      <div id="gridbox"></div>
     </div>
   </body>
 </html>

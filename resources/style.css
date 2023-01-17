@@ -1,5 +1,15 @@
 /* PAGE styling */
+html {
+	min-height: 100%;
+}
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
 
 
 .header {
@@ -23,14 +33,21 @@
 	max-width: 150px;
 }
 
+#sizeValue {
+	align-self: center;
+}
+
 
 
 /* GRID */
 
-.gridcontainer {
-	border: 1px solid blue;
+#gridbox {
+	display: grid;
+	width: 500px;
+	height: 500px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.gridbox {
-	display: grid;
+.grid-cell {
+	user-select: none;
 }
