@@ -1,6 +1,8 @@
 /* PAGE styling */
-html {
-	min-height: 100%;
+:root {
+	--primary-dark: #444;
+	--primary-light:  #ededed;
+	--secondary-light: #fefefe;
 }
 
 *,
@@ -11,10 +13,18 @@ html {
 	margin: 0;
 }
 
+html {
+	min-height: 100%;
+}
+
+
+/* HEADER */
 
 .header {
 	text-align: center;
 }
+
+/* MAIN */
 
 .body {
 	display: flex;
@@ -23,21 +33,66 @@ html {
 	border: 2px dotted grey ;
 }
 
-
-/* BUTTONS */
 .buttons {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	border: 1px solid brown;
-	gap: 2rem;
+	gap: 1.5rem;
 	max-width: 150px;
 }
 
-#sizeValue {
-	align-self: center;
+/* BUTTONS */
+
+button {
+	padding: 10px;
+	border: 1px solid;
+	border-radius: 5px;
+	width: 100%;
 }
 
+button.active{
+	background-color: #444;
+	color:white;
+}
 
+button,
+input[type='color'] {
+	transition: transform .1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+	transform: scale(1.05);
+}
+
+input[type='color']:active {
+	transition: transform 0.05s ease-in-out;
+	transform: scale(1);
+}
+
+input[type='color'] {
+	-webkit-appearance: none;
+	width: 80px;
+	height: 50px;
+	border: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+	border: none;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.size-value {
+	margin-bottom: -20px;
+	font-size: 20px;
+}
 
 /* GRID */
 
@@ -46,6 +101,8 @@ html {
 	width: 500px;
 	height: 500px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background-color: var(--secondary-light);
+	border: 1px solid blue;
 }
 
 .grid-cell {
