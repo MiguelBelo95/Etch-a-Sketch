@@ -62,8 +62,8 @@ function reloadGrid() {
 
 //GRID
 function createGrid(size) {
-	grid.style.gridTemplateColumns = `grid-template-columns: repeat(${size}, 1fr)`;
-	grid.style.gridTemplateRows = `grid-template-rows: repeat(${size}, 1fr);`
+	grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+	grid.style.gridTemplateRows = `repeat(${size}, 1fr);`
 	
 	for (let i=0; i < size * size; i++) {
 		const gridCell = document.createElement('div');

@@ -30,6 +30,7 @@ html {
 	display: flex;
 	width: 60%;
 	margin: auto;
+	justify-content: space-between;
 	border: 2px dotted grey ;
 }
 
