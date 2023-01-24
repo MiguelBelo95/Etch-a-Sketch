@@ -29,6 +29,7 @@ const clearBtn = document.getElementById('clearBtn');
 const sizeDisplay = document.getElementById('sizeValue');
 const sizeSlider = document.getElementById('grid-size');
 const grid = document.getElementById('gridbox');
+const fabs = document.getElementsByClassName('fab');
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
@@ -130,6 +131,10 @@ function changeColor(e) {
 	switch (currentMode) {
 		case 'color':
 			e.target.style.backgroundColor = colorSelector.value;
+			for (let i = 0; i < fabs.length; i++) {
+				console.log(`Color is ${getComputedStyle(fabs[i]).color}`)
+				fabs[i].style.color = colorSelector.value;
+			  }
 			break;
 		case 'eraser':
 			e.target.style.backgroundColor = colorLightness(currentMode, e.target.style.backgroundColor)

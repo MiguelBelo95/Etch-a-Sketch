@@ -22,16 +22,19 @@ html {
 
 .header {
 	text-align: center;
+	padding-bottom: 2rem;
+	padding-left: 200px;
 }
 
 /* MAIN */
 
 .body {
 	display: flex;
-	width: 60%;
+	max-width: 1100px;
 	margin: auto;
-	justify-content: space-between;
-	border: 2px dotted grey ;
+	justify-content: center;
+	align-items: center;
+	gap: 100px;
 }
 
 .buttons {
@@ -39,7 +42,8 @@ html {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid brown;
+	padding: 5px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
 	gap: 1.5rem;
 	max-width: 150px;
 }
@@ -108,4 +112,30 @@ input[type='color']::-webkit-color-swatch {
 
 .grid-cell {
 	user-select: none;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 1rem;
+}
+
+#anchor {
+    text-decoration: none;
+    padding: 0px 2px;
+    
+}
+.fab {
+    transition: transform 0.3s ease-in-out;
+}
+.fab:hover {
+    transform: rotate(360deg)scale(1.2);
 }
