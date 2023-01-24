@@ -19,7 +19,7 @@ function updateColor(newColor) {
 	currentColor = newColor;
 }
 
-const color = document.getElementById('colorSelector');
+const colorSelector = document.getElementById('colorSelector');
 const colorBtn = document.getElementById('penBtn');
 const rainbowBtn = document.getElementById('rainbowBtn');
 const darkBtn = document.getElementById('darkBtn');
@@ -120,7 +120,7 @@ rainbowBtn.onclick = () => updateMode('rainbow');
 colorBtn.onclick = () => updateMode('color');
 darkBtn.onclick = () => updateMode('darker');
 brightBtn.onclick = () => updateMode('brighter');
-eraserBtn.onclick = () => updateMode('erase');
+eraserBtn.onclick = () => updateMode('eraser');
 clearBtn.onclick = () => reloadGrid();
 
 // BUTTONS functions
@@ -129,10 +129,10 @@ function changeColor(e) {
 	if(e.type === 'mouseover' && !mouseDown) return;
 	switch (currentMode) {
 		case 'color':
-			e.target.style.backgroundColor = currentColor;
+			e.target.style.backgroundColor = colorSelector.value;
 			break;
 		case 'eraser':
-			e.target.style.backgroundColor = '#ffffff';
+			e.target.style.backgroundColor = colorLightness(currentMode, e.target.style.backgroundColor)
 			break;
 		case 'brighter':
 			e.target.style.backgroundColor = colorLightness(currentMode, e.target.style.backgroundColor);
@@ -156,22 +156,23 @@ function getRandomColor() {
 function colorLightness(method, color) {
 	let colorValues = color.substring(4, color.length-1).split(",");
 	let value;
-	for (let i = 0; i < colorValues.length-1; i++) {
-		console.log(colorValues[i]);
-		if (isNaN(colorValues[i])) {
-			colorValues[i] = 255;
-		}
-		console.log(colorValues[i]);
+	console.log(`length of colorValues: ${colorValues.length}`);
+	if (colorValues.length <= 1 || method === 'eraser') {
+		colorValues[0] = 255;
+		colorValues[1] = 255;
+		colorValues[2] = 255;
 	}
+	console.log(`typeof colorValues: ${typeof(colorValues)}`);
 
 	if (method === 'brighter') {
 		value = 20;
-	} else value = -20;
+	} else if (method === 'darker') {
+		value = -20;
+	} else value = 0;
 
 	R = parseInt(colorValues[0]) + value;
 	G = parseInt(colorValues[1]) + value;
 	B = parseInt(colorValues[2]) + value;
-	console.log(R);
 
 
 	R = Math.min(255, Math.max(0, R));
