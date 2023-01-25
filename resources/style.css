@@ -107,7 +107,6 @@ input[type='color']::-webkit-color-swatch {
 	height: 500px;
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	background-color: var(--secondary-light);
-	border: 1px solid blue;
 }
 
 .grid-cell {
@@ -138,4 +137,64 @@ footer {
 }
 .fab:hover {
     transform: rotate(360deg)scale(1.2);
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-height: 680px) {
+	footer {
+		position: relative;
+		margin: 2rem 0 0 0;
+	};
+
+}
+
+@media only screen and (max-width: 860px) {
+
+	.header {
+		padding-left: 0;
+		padding-bottom: 1rem;
+	}
+
+	.body {
+		flex-direction: column-reverse;
+		max-width: 800px;
+	}
+
+	#gridbox {
+		width: 400px;
+		height: 400px;
+	}
+
+
+	footer {
+		position: relative;
+		margin: 2rem 0 0 0;
+	};
+}
+
+@media only screen and (max-width: 650px) {
+
+	.header {
+		padding-left: 0;
+		padding-bottom: 1rem;
+	}
+
+	.body {
+		flex-direction: column-reverse;
+		max-width: 600px;
+		gap: 1rem;
+	}
+
+	#gridbox {
+		width: 300px;
+		height: 300px;
+	}
+
+
+	footer {
+		position: relative;
+		margin: 1rem 0 0 0;
+	};
 }
